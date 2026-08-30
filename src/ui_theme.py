@@ -208,7 +208,13 @@ _CSS = f"""
 <style>
 .block-container {{
     max-width: 1280px;
-    padding-top: 1.5rem;
+    /* Streamlit Community Cloud overlays its own fixed-position viewer
+       toolbar above the app, taller than the local dev toolbar this value
+       was originally tuned against -- 1.5rem was enough to clear it
+       locally but clipped page headings (e.g. "Clean Data") under Cloud's
+       toolbar. A bit more top padding clears it everywhere without adding
+       a large empty gap. */
+    padding-top: 3rem;
     padding-bottom: 3rem;
 }}
 .dqa-page-title {{
