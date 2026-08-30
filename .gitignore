@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environment
+.venv/
+venv/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Environment variables (all variants ignored; the example file stays committed)
+.env*
+!.env.example
+
+# Database (generated at runtime)
+database/*.db
+database/*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Logs
+*.log
+
+# Generated outputs (regenerated at runtime, not committed)
+outputs/*/*
+!outputs/*/.gitkeep
+
+# Data (uploaded/raw/processed/sample data should not be committed)
+data/raw/*
+data/processed/*
+data/sample/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/sample/.gitkeep
+
+# Bundled demo dataset MUST stay tracked and publishable -- do not ignore.
+!data/demo_employee_data.csv
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Test cache
+.pytest_cache/
+.coverage
+htmlcov/
