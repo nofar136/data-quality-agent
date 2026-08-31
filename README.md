@@ -12,6 +12,8 @@ dataset.
 01 Upload  →  02 Review Issues  →  03 Clean Data  →  04 Results
 ```
 
+[View Project](https://nofar136.github.io/data-quality-agent/) · [Live Demo](https://data-quality-agent-nsfyrz2uznzsrhgnx6dddv.streamlit.app)
+
 ## Key Features
 
 - CSV/Excel ingestion with encoding and delimiter detection
@@ -76,9 +78,8 @@ streamlit run app.py
 
 ## Live Demo
 
-Public Streamlit demo: Coming soon.
-
-> Screenshots to be added before publication.
+- Live Demo: [https://data-quality-agent-nsfyrz2uznzsrhgnx6dddv.streamlit.app](https://data-quality-agent-nsfyrz2uznzsrhgnx6dddv.streamlit.app)
+- Project Page: [https://nofar136.github.io/data-quality-agent/](https://nofar136.github.io/data-quality-agent/)
 
 ## License / Dataset Attribution
 
