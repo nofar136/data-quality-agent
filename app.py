@@ -1762,10 +1762,12 @@ def render_upload_page(result: LoadedDataset | None) -> None:
             )
 
         st.divider()
-        st.caption("Don't have a dataset?")
-        if st.button("Use Demo Dataset", key="use_demo_dataset_btn"):
-            st.session_state["use_demo_dataset"] = True
-            st.rerun()
+        with st.container(border=True, key="card_demo_callout"):
+            st.markdown("#### Want to see how it works?")
+            st.caption("Try the built-in demo dataset and explore the full workflow instantly.")
+            if st.button("Use Demo Dataset", key="use_demo_dataset_btn", type="primary", width="stretch"):
+                st.session_state["use_demo_dataset"] = True
+                st.rerun()
         return
 
     badge = f"{result.file_name} (demo)" if st.session_state.get("use_demo_dataset") else result.file_name

@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Quality Agent — Nofar Nahum</title>
+  <meta name="description" content="Data Quality Agent: a rule-based, human-in-the-loop data quality application by Nofar Nahum. Scans CSV/Excel files, surfaces data problems, and produces a reviewed, cleaned dataset with a before/after quality report." />
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================== NAV ============================== -->
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-name">Nofar Nahum</span>
+        <span class="brand-sep" aria-hidden="true">·</span>
+        <span class="brand-tag">Data &amp; AI Project</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+        <a href="#top">Project</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#outcomes">Results</a>
+        <a class="nav-cta" href="https://data-quality-agent-nsfyrz2uznzsrhgnx6dddv.streamlit.app" target="_blank" rel="noopener noreferrer">Live Demo</a>
+        <a class="nav-cta nav-cta--ghost" href="https://github.com/nofar136/data-quality-agent" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================== HERO ============================== -->
+    <section class="hero" id="top">
+      <div class="hero-grid-pattern" aria-hidden="true"></div>
+      <div class="hero-glow" aria-hidden="true"></div>
+
+      <div class="section-inner hero-inner">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Nofar Nahum · Data &amp; AI Project</p>
+          <h1 class="hero-title">Data Quality Agent</h1>
+          <p class="hero-statement">Turn messy data into data you can trust.</p>
+          <p class="hero-description">
+            A data-quality application that scans CSV and Excel files for common problems,
+            guides the user through decisions that require human judgment, and produces a
+            reviewed, cleaned dataset with a clear before/after quality report.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://data-quality-agent-nsfyrz2uznzsrhgnx6dddv.streamlit.app" target="_blank" rel="noopener noreferrer">Try Live Demo</a>
+            <a class="btn btn-secondary" href="https://github.com/nofar136/data-quality-agent" target="_blank" rel="noopener noreferrer">View GitHub</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="visual-card">
+            <div class="visual-card-header">
+              <span class="dot dot--critical"></span>
+              <span class="dot dot--warn"></span>
+              <span class="dot dot--ok"></span>
+              <span class="visual-card-title">dataset.csv</span>
+            </div>
+
+            <div class="data-grid">
+              <div class="data-row data-row--head">
+                <span>id</span><span>age</span><span>email</span><span>join_date</span>
+              </div>
+              <div class="data-row">
+                <span>1042</span><span class="cell-issue" title="Missing value">—</span><span>a.levi@ex.com</span><span>2021-03-04</span>
+              </div>
+              <div class="data-row">
+                <span>1043</span><span>29</span><span class="cell-issue" title="Malformed value">n/a</span><span>04/03/2021</span>
+              </div>
+              <div class="data-row">
+                <span>1044</span><span>34</span><span>m.cohen@ex.com</span><span class="cell-issue" title="Inconsistent format">03-Apr-21</span>
+              </div>
+              <div class="data-row">
+                <span>1045</span><span class="cell-issue" title="Missing value">—</span><span>t.mizrahi@ex.com</span><span>2021-04-10</span>
+              </div>
+            </div>
+
+            <div class="visual-arrow" aria-hidden="true">
+              <span>before</span>
+              <svg width="28" height="14" viewBox="0 0 28 14" fill="none"><path d="M0 7H26M26 7L20 1M26 7L20 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>after</span>
+            </div>
+
+            <div class="score-pill">
+              <span class="score-pill-label">Quality Score</span>
+              <span class="score-pill-value">99.3<span class="score-pill-max">/100</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== HOW IT WORKS ============================== -->
+    <section class="section section--dark" id="how-it-works">
+      <div class="section-inner">
+        <h2 class="section-title section-title--on-dark reveal">From raw file to reviewed dataset</h2>
+
+        <div class="chip-row chip-row--compact reveal">
+          <span class="chip chip--on-dark">Missing values</span>
+          <span class="chip chip--on-dark">Wrong data types</span>
+          <span class="chip chip--on-dark">Inconsistent formats</span>
+          <span class="chip chip--on-dark">Outliers</span>
+          <span class="chip chip--on-dark">Values that need review</span>
+        </div>
+
+        <ol class="pipeline reveal">
+          <li class="pipeline-step">
+            <span class="pipeline-num">01</span>
+            <span class="pipeline-name">Upload</span>
+            <p class="pipeline-desc">Load CSV or Excel files.</p>
+          </li>
+          <li class="pipeline-step">
+            <span class="pipeline-num">02</span>
+            <span class="pipeline-name">Review</span>
+            <p class="pipeline-desc">Automatically profile the data and surface quality problems.</p>
+          </li>
+          <li class="pipeline-step">
+            <span class="pipeline-num">03</span>
+            <span class="pipeline-name">Clean</span>
+            <p class="pipeline-desc">Choose how each issue should be handled.</p>
+          </li>
+          <li class="pipeline-step">
+            <span class="pipeline-num">04</span>
+            <span class="pipeline-name">Results</span>
+            <p class="pipeline-desc">Compare before vs. after and download the cleaned dataset.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================== WHAT THE USER GETS ============================== -->
+    <section class="section section--light" id="outcomes">
+      <div class="section-inner">
+        <h2 class="section-title reveal">Clean data, usable results</h2>
+
+        <div class="outcome-grid reveal">
+          <div class="outcome-card">
+            <h3>Cleaned Dataset</h3>
+            <p>Download reviewed CSV or Excel files.</p>
+          </div>
+          <div class="outcome-card">
+            <h3>Before &amp; After</h3>
+            <p>See exactly how data quality changed.</p>
+          </div>
+          <div class="outcome-card">
+            <h3>Audit Trail</h3>
+            <p>Every value actually changed is recorded.</p>
+          </div>
+          <div class="outcome-card">
+            <h3>Decision History</h3>
+            <p>Human decisions are recorded too — including when data is intentionally kept unchanged.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== UNDER THE HOOD ============================== -->
+    <section class="section section--light section--muted" id="under-the-hood">
+      <div class="section-inner">
+        <h2 class="section-title section-title--small reveal">Under the hood</h2>
+
+        <div class="stack-group reveal">
+          <p class="stack-group-label">Product Stack</p>
+          <div class="tech-pills">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">Pandas</span>
+            <span class="tech-pill">Streamlit</span>
+            <span class="tech-pill">Plotly</span>
+            <span class="tech-pill">SQLite</span>
+            <span class="tech-pill">Pytest</span>
+          </div>
+        </div>
+
+        <div class="stack-group stack-group--ai reveal">
+          <p class="stack-group-label stack-group-label--ai">AI-Assisted Development</p>
+          <div class="tech-pills">
+            <span class="tech-pill tech-pill--ai">Claude Code</span>
+            <span class="tech-pill tech-pill--ai">ChatGPT</span>
+            <span class="tech-pill tech-pill--ai">VS Code</span>
+          </div>
+          <p class="stack-note">
+            AI tools supported development, reasoning, testing and iteration; the deployed
+            application itself runs without an external AI API.
+          </p>
+        </div>
+
+        <details class="architecture-details reveal">
+          <summary>View technical architecture</summary>
+          <div class="architecture-flow">
+            <span>CSV / Excel / Demo</span>
+            <span class="architecture-arrow" aria-hidden="true">→</span>
+            <span>File Loading</span>
+            <span class="architecture-arrow" aria-hidden="true">→</span>
+            <span>Schema &amp; Profiling</span>
+            <span class="architecture-arrow" aria-hidden="true">→</span>
+            <span>Issue Detection</span>
+            <span class="architecture-arrow" aria-hidden="true">→</span>
+            <span>Human Review</span>
+            <span class="architecture-arrow" aria-hidden="true">→</span>
+            <span>Cleaning</span>
+            <span class="architecture-arrow" aria-hidden="true">→</span>
+            <span>Re-analysis</span>
+            <span class="architecture-arrow" aria-hidden="true">→</span>
+            <span>Results / Export</span>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============================== FINAL CTA ============================== -->
+    <section class="section section--cta" id="final-cta">
+      <div class="section-inner cta-inner">
+        <h2 class="section-title section-title--on-dark reveal">Want to see the full workflow?</h2>
+        <div class="cta-row reveal">
+          <a class="btn btn-primary" href="https://data-quality-agent-nsfyrz2uznzsrhgnx6dddv.streamlit.app" target="_blank" rel="noopener noreferrer">Try Live Demo</a>
+          <a class="btn btn-secondary" href="https://github.com/nofar136/data-quality-agent" target="_blank" rel="noopener noreferrer">View GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-inner footer-inner">
+      <p class="footer-name">Nofar Nahum</p>
+      <p class="footer-tag">Data &amp; AI Project</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

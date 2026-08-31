@@ -339,6 +339,20 @@ div[class*="st-key-card_upload_hero"] {{
     color: {TEXT_SECONDARY};
 }}
 
+/* --- Upload page demo-dataset callout: a second, equally inviting entry
+   point (upload your own file, or try the demo) -- a blue-tinted card so
+   it reads as a real option, not an afterthought, without being flashy. --- */
+div[class*="st-key-card_demo_callout"] {{
+    background: {PRIMARY_SOFT};
+    border: 1px solid {PRIMARY};
+    text-align: center;
+    padding: 1.5rem 1.5rem 1.75rem;
+}}
+div[class*="st-key-card_demo_callout"] h4 {{
+    color: {NAVY};
+    margin-bottom: 0.25rem;
+}}
+
 /* --- Selectbox (single-choice dropdowns): make the control unmistakably
    interactive -- stronger border, white surface, rounded corners, a clear
    focus ring, and a bigger, colored chevron. Selectors use stable ARIA
