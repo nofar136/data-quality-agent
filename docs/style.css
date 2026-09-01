@@ -188,6 +188,19 @@ summary:focus-visible {
 /* --- Buttons -------------------------------------------------------------- */
 .cta-row { display: flex; flex-wrap: wrap; gap: 14px; }
 
+/* Small note under the primary Live Demo CTA (hero only -- not repeated
+   elsewhere) about cold-start wake time on Streamlit Community Cloud. */
+.cta-note {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: var(--text-on-dark-secondary);
+}
+.cta-note--muted {
+  margin-top: 4px;
+  font-size: 0.75rem;
+  color: rgba(148, 163, 196, 0.7);
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
